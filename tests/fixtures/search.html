@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Offline search fixture</title>
+<div class="nav-figure">测试账号</div>
+<input class="search-input" placeholder="搜索职位"><script>document.querySelector('.search-input').value='Python';</script>
+<button class="city-label" onclick="document.querySelector('.city-dialog').hidden=false">北京</button>
+<div class="city-dialog" hidden><button onclick="document.querySelector('.city-label').textContent='上海';this.parentElement.hidden=true">上海</button></div>
+<button class="filter-select-box" onclick="document.querySelector('.experience-options').hidden=false">工作经验 不限</button>
+<div class="experience-options" hidden><button onclick="document.querySelector('.filter-select-box').textContent='工作经验 应届生';this.parentElement.hidden=true">应届生</button></div>
+<ul>
+<li class="job-card-wrapper"><a class="job-name" href="/job_detail/jobA.html?securityId=not-for-output">Python 工程师</a><span class="company-name">甲公司</span><span class="job-area">北京</span><span class="salary">20-30K</span><ul class="tag-list"><li>应届生</li><li>本科</li></ul></li>
+<li class="job-card-wrapper"><a class="job-name" href="/job_detail/jobA.html">Python 工程师</a><span class="company-name">甲公司</span></li>
+</ul>
+<div class="options-pages"><a class="next" href="#" onclick="event.preventDefault();document.querySelectorAll('.job-card-wrapper')[1].remove();document.querySelector('.job-name').textContent='第二页岗位';document.querySelector('.job-name').href='/job_detail/jobB.html';this.classList.add('disabled')">下一页</a></div>
+</html>

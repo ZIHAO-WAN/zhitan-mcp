@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.local-backup/
+.local-data/
+.idea/
+.vscode/
+*.log
+*.bak
+.env
+.env.*
+cookies.txt
+extension-pairing-token
+imported-session.json
+greetings.sqlite3*

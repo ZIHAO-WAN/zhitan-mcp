@@ -1,0 +1,4 @@
+# Direct dependencies are pinned. requirements.lock contains the complete graph.
+fastmcp==4.1.6
+pydantic==2.13.4
+websockets==17.4
