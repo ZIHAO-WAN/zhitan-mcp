@@ -90,7 +90,7 @@ class BrowserBridge:
                     'CITY_NOT_MATCHED': ('无法确认当前搜索城市与请求一致。', '请先在官网搜索页选择指定城市。'),
                     'FILTER_NOT_APPLIED': ('无法确认搜索条件已生效。', None),
                     'DETAIL_NOT_RECOGNIZED': ('无法确认职位详情和沟通状态。', None),
-                    'EXTENSION_OUTDATED': ('请重新加载当前版“职探 · Boss 连接器”扩展。', None),
+                    'EXTENSION_OUTDATED': ('请重新加载当前版“ZhiTan · Boss 连接器”扩展。', None),
                     'JOB_MISMATCH': ('实际页面与指定岗位不一致。', None),
                     'JOB_CLOSED': ('该岗位已关闭或停止招聘。', None),
                 }

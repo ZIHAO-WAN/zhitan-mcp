@@ -9,6 +9,7 @@ import pytest
 from boss_zp.browser import canonical_job_url, normalize_city
 from boss_zp.server import safe_call
 from boss_zp.storage import BossError, GreetingLedger, bridge_pairing_token
+from scripts.install_antigravity import merge_mcp_config
 from scripts.install_codex import merge_config
 
 
@@ -97,3 +98,18 @@ def test_config_merge_enable_send_flag(tmp_path):
     assert parsed["mcp_servers"]["boss_zhipin"]["env"]["BOSS_ZP_ENABLE_SEND"] == "1"
     default_merged = merge_config(merged, tmp_path, enable_send=False)
     assert "BOSS_ZP_ENABLE_SEND" not in tomllib.loads(default_merged)["mcp_servers"]["boss_zhipin"]["env"]
+
+
+def test_antigravity_mcp_config_merge_preserves_other_servers(tmp_path):
+    import json
+    original = json.dumps({"mcpServers": {"other": {"command": "npx", "args": ["-y", "demo"]}}})
+    merged = merge_mcp_config(original, tmp_path, enable_send=False)
+    parsed = json.loads(merged)
+    assert parsed["mcpServers"]["other"] == {"command": "npx", "args": ["-y", "demo"]}
+    entry = parsed["mcpServers"]["boss_zhipin"]
+    assert entry["args"] == ["-m", "boss_zp.server"]
+    assert entry["env"]["PYTHONPATH"] == str(tmp_path)
+    assert entry["env"]["BOSS_ZP_ENABLE_SEND"] == "0"
+    assert merge_mcp_config(merged, tmp_path, enable_send=False) == merged
+    enabled = json.loads(merge_mcp_config(merged, tmp_path, enable_send=True))
+    assert enabled["mcpServers"]["boss_zhipin"]["env"]["BOSS_ZP_ENABLE_SEND"] == "1"

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "职探 · Boss 连接器",
+  "name": "ZhiTan · Boss 连接器",
   "version": "1.3.1",
-  "description": "连接已登录的 Boss 页面，为职探 MCP 提供岗位搜索和详情读取。",
+  "description": "连接已登录的 BOSS 直聘页面，为 ZhiTan MCP 提供本地岗位搜索和详情读取。",
   "permissions": ["activeTab", "scripting", "storage", "alarms"],
   "host_permissions": ["https://www.zhipin.com/*"],
   "background": {"service_worker": "background.js"},

@@ -1,3 +1,3 @@
-"""职探 MCP: local Boss Zhipin job search and greeting workflow."""
+"""ZhiTan: mcp for boss — local MCP server for Boss Zhipin."""
 
-__version__ = "1.2.0"
+__version__ = "1.3.1"

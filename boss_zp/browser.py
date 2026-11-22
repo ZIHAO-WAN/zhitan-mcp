@@ -99,7 +99,7 @@ class ExtensionSession:
         await self._close_pairing_window()
         search = response.get('search') or {}
         if 'stop_reason' not in search:
-            raise BossError('EXTENSION_OUTDATED', '请重新加载当前版“职探 · Boss 连接器”扩展后再搜索。')
+            raise BossError('EXTENSION_OUTDATED', '请重新加载当前版“ZhiTan · Boss 连接器”扩展后再搜索。')
         if (search.get('keyword') != keyword or not search.get('city')
                 or normalize_city(search['city']) != normalize_city(city)):
             raise BossError('FILTER_NOT_APPLIED', '无法确认当前页面与指定关键词和城市一致。', '请在官网打开匹配的搜索结果页。')
@@ -165,7 +165,7 @@ class ExtensionSession:
         status = await self.bridge.request('status', timeout=10)
         await self._close_pairing_window()
         if status.get('bridge_protocol') != 1 or status.get('send_contract') != 4:
-            raise BossError('EXTENSION_OUTDATED', '请重新加载当前版“职探 · Boss 连接器”扩展后再发送。')
+            raise BossError('EXTENSION_OUTDATED', '请重新加载当前版“ZhiTan · Boss 连接器”扩展后再发送。')
 
     async def shutdown(self):
         await self.bridge.close()

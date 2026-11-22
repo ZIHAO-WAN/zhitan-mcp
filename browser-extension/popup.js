@@ -38,6 +38,6 @@ document.getElementById('connect').addEventListener('click', async () => {
   try {
     await chrome.runtime.sendMessage({type: 'connect_bridge', token});
     input.value = '';
-    output.textContent = '已发起连接；请在 Codex 中检查连接状态。';
+    output.textContent = '已发起连接；请在 MCP 客户端中检查连接状态。';
   } catch (_) { output.textContent = '连接请求失败，请重新加载扩展。'; }
 });

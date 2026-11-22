@@ -2,11 +2,11 @@
 Add-Type -AssemblyName System.Drawing
 $token = [Console]::ReadLine()
 $form = New-Object System.Windows.Forms.Form
-$form.Text = '职探 MCP 本地配对'
+$form.Text = 'ZhiTan 本地配对'
 $form.Size = New-Object System.Drawing.Size(540, 225)
 $form.StartPosition = 'CenterScreen'
 $label = New-Object System.Windows.Forms.Label
-$label.Text = '复制本地密钥，仅粘贴到职探浏览器扩展，不要发送到聊天。'
+$label.Text = '复制本地密钥，仅粘贴到 ZhiTan 浏览器扩展，不要发送到聊天。'
 $label.AutoSize = $true
 $label.Location = New-Object System.Drawing.Point(15, 15)
 $form.Controls.Add($label)

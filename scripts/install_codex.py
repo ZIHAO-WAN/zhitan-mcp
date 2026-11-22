@@ -84,7 +84,7 @@ def main() -> None:
     finally:
         if Path(temporary).exists():
             Path(temporary).unlink()
-    print("Installed 职探 MCP in " + str(config))
+    print("Installed ZhiTan MCP in " + str(config))
     print("Restart the Codex client or open a new session to load the tools.")
 
 
